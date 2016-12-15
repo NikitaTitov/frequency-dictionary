@@ -1,25 +1,18 @@
 package com.emap.learning;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import static java.util.function.Function.*;
+import static java.util.stream.Collectors.*;
 
 public final class FrequencyDictionary {
     private FrequencyDictionary() {
     }
 
-    public static HashMap<String, Integer> searchForRepeat(String[] incomeString) {
-        HashMap<String, Integer> result = new HashMap<>();
-        int counter = 0;
-        String[] stringForMatcher = incomeString;
-
-        for (int i = 0; i < incomeString.length; i++) {
-            for (int j = 0; j < incomeString.length; j++){
-                if (incomeString[i].matches(stringForMatcher[j])){
-                    counter++;
-                }
-
-            }
-            result.put(incomeString[i],counter);
-            counter = 0;
-        }
+    public static HashMap<String, Integer> searchForRepeat(String incomeString) {
+        List<String> list = Arrays.asList(ParseString.parse(incomeString));
+        HashMap<String, Integer> result = list.stream()
+                .collect(groupingBy(identity(),summingInt(e -> 1)));
         return result;
     }
 }

@@ -17,7 +17,7 @@ public class Test {
 
     @org.junit.Test
     public void testSearchForRepeat() throws Exception {
-        assertArrayEquals(searchForRepeat(parse(testString)).keySet().toArray(), arrayKeysInHashMap);
-        assertArrayEquals(searchForRepeat(parse(testString)).values().toArray(), arrayValuesInHashMap);
+        assertArrayEquals(searchForRepeat(testString).keySet().toArray(), arrayKeysInHashMap);
+        assertArrayEquals(searchForRepeat(testString).values().toArray(), arrayValuesInHashMap);
     }
 }
