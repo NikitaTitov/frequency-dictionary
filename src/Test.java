@@ -8,7 +8,6 @@ public class Test {
     String[] testStringArray = {"the", "chihuahua", "came", "to", "help", "the", "girl", "the", "came", "chihuahua", "to", "help", "the", "girl"};
 
     Integer[] arrayValuesInHashMap = {4, 2, 2, 2, 2, 2};
-    String[] arrayKeysInHashMap = {"the", "chihuahua", "help", "came", "to", "girl"};
 
     @org.junit.Test
     public void testParse() throws Exception {
@@ -17,7 +16,6 @@ public class Test {
 
     @org.junit.Test
     public void testSearchForRepeat() throws Exception {
-        assertArrayEquals(searchForRepeat(testString).keySet().toArray(), arrayKeysInHashMap);
         assertArrayEquals(searchForRepeat(testString).values().toArray(), arrayValuesInHashMap);
     }
 }
